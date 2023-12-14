@@ -1,0 +1,18 @@
+[
+  {
+    "id": "0",
+    "name": "John",
+    "lastName": "Doe",
+    "number": "123",
+    "personalCode": "999",
+    "balance": "100"
+  },
+  {
+    "id": "1",
+    "name": "Jane",
+    "lastName": "Eod",
+    "number": "321",
+    "personalCode": "000",
+    "balance": "200"
+  }
+]
