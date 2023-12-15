@@ -2,49 +2,33 @@
   {
     "id": 0,
     "name": "John",
-    "lastName": "Doe",
-    "number": "111",
-    "personalCode": "999",
+    "lastName": "Ab",
+    "number": "LT009999900000000001",
+    "personalCode": "testNumber",
     "balance": 0
   },
   {
     "id": 1,
-    "name": "Jane",
-    "lastName": "Doe",
-    "number": "222",
-    "personalCode": "999",
-    "balance": 100
-  },
-  {
-    "id": 0,
     "name": "John",
-    "lastName": "Doe",
-    "number": "111",
-    "personalCode": "999",
+    "lastName": "B",
+    "number": "LT009999900000000002",
+    "personalCode": "testNumber",
     "balance": 0
   },
   {
-    "id": 0,
+    "id": 2,
     "name": "John",
-    "lastName": "Doe",
-    "number": "111",
-    "personalCode": "999",
+    "lastName": "F",
+    "number": "LT009999900000000003",
+    "personalCode": "testNumber",
     "balance": 0
   },
   {
-    "id": 0,
+    "id": 3,
     "name": "John",
-    "lastName": "Doe",
-    "number": "111",
-    "personalCode": "999",
-    "balance": 0
-  },
-  {
-    "id": 0,
-    "name": "John",
-    "lastName": "Doe",
-    "number": "111",
-    "personalCode": "999",
+    "lastName": "A",
+    "number": "LT009999900000000004",
+    "personalCode": "testNumber",
     "balance": 0
   }
 ]

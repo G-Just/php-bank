@@ -16,7 +16,6 @@
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   background: var(--background);
-  color: white;
 }
 
 #navbar {
@@ -49,7 +48,7 @@ body {
 
 .wallet {
   border: var(--border);
-  margin-top: 20px;
+  margin-bottom: 20px;
   width: 500px;
   background-color: var(--primary);
   padding: 10px;
@@ -66,5 +65,50 @@ body {
     display: flex;
     justify-content: space-evenly;
     padding: 10px;
+  }
+}
+
+#form-window-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 100px;
+  #form-window {
+    background: var(--primary);
+    border: var(--border);
+    padding: 20px;
+    form {
+      display: flex;
+      flex-direction: column;
+      p {
+        text-align: center;
+        user-select: none;
+      }
+      h1 {
+        user-select: none;
+        margin-bottom: 1rem;
+      }
+      label {
+        font-size: 1.2em;
+        padding: 5px;
+        font-weight: bold;
+      }
+      input {
+        font-size: 1.5em;
+        font-weight: bold;
+        padding: 5px 15px;
+        border-radius: 10px;
+        border: 1px solid black;
+        margin-bottom: 20px;
+      }
+      button {
+        font-size: 1.3em;
+        margin-top: 20px;
+        padding: 20px;
+        border: 2px solid black;
+        cursor: pointer;
+        border-radius: 20px;
+      }
+    }
   }
 }

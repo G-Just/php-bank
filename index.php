@@ -1,14 +1,15 @@
 <?php
-include('./globals/head.php');
-include('./globals/navbar.php');
-require('./functions/functions.php');
+include './globals/head.php';
+include './globals/navbar.php';
+require './functions/functions.php';
 ?>
 
 <body>
     <div id='wallet-list'>
         <?php
         $data = read();
-        if (isset($data)) {
+        usort($data, "sortByLastName");
+        if (count($data) > 0) {
             foreach ($data as $entry) {
                 createWallet(
                     $entry->id,
