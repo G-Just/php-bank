@@ -1,12 +1,33 @@
 <?php
-function fetch(): array
+function read($id = -1): array | object
 {
     $data = file_get_contents('./database/data.JSON');
     $data = json_decode($data);
-    return $data;
+    if ($id === -1) {
+        return $data;
+    } else {
+        foreach ($data as $object) {
+            if ($object->id === $id) {
+                return [$object];
+            }
+        }
+    }
+    die("Reading failed. Maybe the requested ID doesn't exist?");
 }
-
-function createWallet($id, $name, $lname, $number, $code, $balance)
+function write($name, $lname, $number, $code): void
+{
+    $currentData = read();
+    if (isset((end($currentData)->id))) {
+        $id = (end($currentData)->id) + 1;
+    } else {
+        $id = 0;
+    }
+    $newWallet = ['id' => $id, 'name' => $name, 'lastName' => $lname, 'number' => $number, 'personalCode' => $code, 'balance' => 0];
+    array_push($currentData, $newWallet);
+    $currentData = json_encode($currentData);
+    file_put_contents('./database/data.JSON', $currentData);
+}
+function createWallet($id, $name, $lname, $number, $code, $balance): void
 {
     echo "
     <div class='wallet'>

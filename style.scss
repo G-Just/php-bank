@@ -2,18 +2,42 @@
 *::before,
 *::after {
   box-sizing: border-box;
-}
-
-body,
-body * {
   margin: 0;
   padding: 0;
+}
+
+:root {
+  --primary: rgb(235, 177, 95);
+  --secondary: rgb(238, 238, 238);
+  --background: rgb(34, 40, 49);
+  --border: 5px solid white;
+}
+
+body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: var(--background);
+  color: white;
 }
 
 #navbar {
+  padding: 30px;
   display: flex;
   align-items: center;
+  gap: 50px;
+  background: var(--primary);
+  border-bottom: var(--border);
+  user-select: none;
+  p {
+    font-size: 2em;
+    font-weight: bold;
+    font-style: italic;
+    span {
+      img {
+        height: 30px;
+        transform: skewX(-15deg);
+      }
+    }
+  }
 }
 
 #wallet-list {
@@ -24,9 +48,10 @@ body * {
 }
 
 .wallet {
+  border: var(--border);
   margin-top: 20px;
   width: 500px;
-  background-color: slategray;
+  background-color: var(--primary);
   padding: 10px;
   .top {
     display: flex;
@@ -36,7 +61,6 @@ body * {
   .mid {
     text-align: center;
     padding: 10px;
-    background: white;
   }
   .bot {
     display: flex;

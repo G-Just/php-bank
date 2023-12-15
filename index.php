@@ -7,7 +7,7 @@ require('./functions/functions.php');
 <body>
     <div id='wallet-list'>
         <?php
-        $data = fetch();
+        $data = read();
         if (isset($data)) {
             foreach ($data as $entry) {
                 createWallet(
