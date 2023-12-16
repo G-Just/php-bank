@@ -2,7 +2,7 @@
 require '../functions/functions.php';
 function validate(...$values): bool
 {
-    $data = read();
+    $data = readData();
     foreach ($values as $entry) {
         if (empty($entry)) {
             header('Location: ../new.php?error=empty_fields');
@@ -15,7 +15,7 @@ function validate(...$values): bool
             exit();
         }
     }
-    if (strlen($values[0]) <= 3 || strlen($values[1]) <= 3) {
+    if (strlen($values[0]) < 3 || strlen($values[1]) < 3) {
         header('Location: ../new.php?error=short');
         exit();
     }

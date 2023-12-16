@@ -8,7 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         header("Location: ../deposit.php?wallet=$id&error=invalid_amount");
         exit();
     }
-    modify($id, $deposit);
+    modifyWallet($id, $deposit);
     header("Location: ../index.php?status=deposit_added");
 } else {
     header('Location: ../index.php?status=unauthorized');

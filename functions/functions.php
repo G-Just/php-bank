@@ -3,13 +3,14 @@ function test()
 {
     return 'Test';
 }
-function updateData($data)
+function updateData($data): void
 {
     $data = json_encode($data);
     file_put_contents(__DIR__ . '/../database/data.JSON', $data);
 }
-function read($id = -1): array | object
+function readData($id = -1): array | object
 {
+    $id = (int)$id;
     $data = file_get_contents(__DIR__ . '/../database/data.JSON'); // <- 3h fixing this CANCER with relative paths
     $data = json_decode($data);
     if ($id === -1) {
@@ -21,11 +22,11 @@ function read($id = -1): array | object
             }
         }
     }
-    die("Reading failed. Maybe the requested ID doesn't exist?");
+    die("readDataing failed. Maybe the requested ID -> $id doesn't exist?");
 }
 function addNewWallet($name, $lname, $number, $code): void
 {
-    $currentData = read();
+    $currentData = readData();
     if (isset((end($currentData)->id))) {
         $id = (end($currentData)->id) + 1;
     } else {
@@ -35,15 +36,26 @@ function addNewWallet($name, $lname, $number, $code): void
     array_push($currentData, $newWallet);
     updateData($currentData);
 }
-function modify($id, $amount)
+function modifyWallet($id, $amount)
 {
-    $currentData = read();
+    $currentData = readData();
     foreach ($currentData as $wallet) {
         if ($wallet->id === (int)$id) {
             $wallet->balance += (float)$amount;
             print_r($wallet);
         }
     }
+    updateData($currentData);
+}
+function removeWallet($id)
+{
+    $currentData = readData();
+    foreach ($currentData as $key => $wallet) {
+        if ($wallet->id === (int)$id) {
+            unset($currentData[$key]);
+        }
+    }
+    $currentData = array_values($currentData);
     updateData($currentData);
 }
 function createWallet($id, $name, $lname, $number, $code, $balance): void
@@ -61,7 +73,7 @@ function createWallet($id, $name, $lname, $number, $code, $balance): void
         <div class='bot'>
             <a href='./deposit.php?wallet=$id'>Add funds</a>
             <a href='./withdraw.php?wallet=$id'>Withdraw funds</a>
-            <button>Close account</button>
+            <a href='./_includes/remove_h.php?wallet=$id'>Close account</a>
         </div>
     </div>";
 }

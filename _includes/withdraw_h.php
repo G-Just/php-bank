@@ -4,7 +4,7 @@ require '../functions/functions.php';
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $withdraw = $_POST['withdraw'];
     $id = $_POST['id'];
-    $wallet = read((int)$id)[0]->balance;
+    $wallet = readData((int)$id)[0]->balance;
     if ($withdraw <= 0 || !isset($withdraw) || $withdraw > PHP_INT_MAX) {
         header("Location: ../withdraw.php?wallet=$id&error=invalid_amount");
         exit();
@@ -13,7 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         header("Location: ../withdraw.php?wallet=$id&error=insufficient_funds");
         exit();
     }
-    modify($id, $withdraw * -1);
+    modifyWallet($id, $withdraw * -1);
     header("Location: ../index.php?status=balance_withdrawn");
 } else {
     header('Location: ../index.php?status=unauthorized');

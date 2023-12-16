@@ -1,5 +1,5 @@
 <?php
-include './globals/head.php';
+include './globals/head.html';
 include './globals/navbar.php';
 include './functions/functions.php';
 ?>
@@ -10,7 +10,7 @@ include './functions/functions.php';
             <form action="./_includes/new_h.php" method="POST">
                 <p>Your new bank account number</p>
                 <?php
-                $data = read();
+                $data = readData();
                 if (count($data) > 0) {
                     $number = str_pad((string)(int)substr(end($data)->number, 9, 11) + 1, 11, '0', STR_PAD_LEFT);
                     $number = "LT0099999$number";

@@ -1,5 +1,5 @@
 <?php
-include './globals/head.php';
+include './globals/head.html';
 include './globals/navbar.php';
 require './functions/functions.php';
 ?>
@@ -7,7 +7,7 @@ require './functions/functions.php';
 <body>
     <div id='wallet-list'>
         <?php
-        $data = read();
+        $data = readData();
         usort($data, "sortByLastName");
         if (count($data) > 0) {
             foreach ($data as $entry) {
@@ -24,7 +24,7 @@ require './functions/functions.php';
             echo "No accounts present. Be the first! <a href='new.php'>Create an account</a>";
         }
         ?>
-    </div>;
+    </div>
 </body>
 
 </html>
