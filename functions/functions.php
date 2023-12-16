@@ -3,6 +3,11 @@ function test()
 {
     return 'Test';
 }
+function updateData($data)
+{
+    $data = json_encode($data);
+    file_put_contents(__DIR__ . '/../database/data.JSON', $data);
+}
 function read($id = -1): array | object
 {
     $data = file_get_contents(__DIR__ . '/../database/data.JSON'); // <- 3h fixing this CANCER with relative paths
@@ -18,7 +23,7 @@ function read($id = -1): array | object
     }
     die("Reading failed. Maybe the requested ID doesn't exist?");
 }
-function write($name, $lname, $number, $code): void
+function addNewWallet($name, $lname, $number, $code): void
 {
     $currentData = read();
     if (isset((end($currentData)->id))) {
@@ -28,8 +33,18 @@ function write($name, $lname, $number, $code): void
     }
     $newWallet = ['id' => $id, 'name' => $name, 'lastName' => $lname, 'number' => $number, 'personalCode' => $code, 'balance' => 0];
     array_push($currentData, $newWallet);
-    $currentData = json_encode($currentData);
-    file_put_contents(__DIR__ . '/../database/data.JSON', $currentData);
+    updateData($currentData);
+}
+function modify($id, $amount)
+{
+    $currentData = read();
+    foreach ($currentData as $wallet) {
+        if ($wallet->id === (int)$id) {
+            $wallet->balance += (float)$amount;
+            print_r($wallet);
+        }
+    }
+    updateData($currentData);
 }
 function createWallet($id, $name, $lname, $number, $code, $balance): void
 {

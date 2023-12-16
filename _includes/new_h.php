@@ -11,7 +11,7 @@ function validate(...$values): bool
     }
     foreach ($data as $entry) {
         if ($entry->personalCode === end($values)) {
-            header('Location: ../new.php?error=duplicate_personalCode');
+            header('Location: ../new.php?error=duplicate_personal_code');
             exit();
         }
     }
@@ -20,7 +20,7 @@ function validate(...$values): bool
         exit();
     }
     if (!validPersonalCode($values[2])) {
-        header('Location: ../new.php?error=invalid_personalCode');
+        header('Location: ../new.php?error=invalid_personal_code');
         exit();
     }
     return true;
@@ -31,7 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $code = htmlspecialchars($_POST['code']);
     $number = $_POST['number'];
     if (validate($name, $lname, $code)) {
-        write($name, $lname, $number, $code);
+        addNewWallet($name, $lname, $number, $code);
         header('Location: ../index.php?status=created');
     }
 } else {
