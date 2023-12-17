@@ -61,21 +61,16 @@ function removeWallet($id)
 function createWallet($id, $name, $lname, $number, $code, $balance): void
 {
     echo "
-    <div class='wallet'>
-        <div class='top'>
-            <p>Owner: $lname $name</p>
-            <p>$number</p>
-            <p>$code</p>
-        </div>
-        <div class='mid'>
-            <p>" . '$ ' . number_format($balance, 2) . "</p>
-        </div>
-        <div class='bot'>
-            <a href='./deposit.php?wallet=$id'>Add funds</a>
-            <a href='./withdraw.php?wallet=$id'>Withdraw funds</a>
-            <a href='./_includes/remove_h.php?wallet=$id'>Close account</a>
-        </div>
-    </div>";
+    <tr>
+    <td>$lname $name</td>
+    <td>$code</td>
+    <td>$number</td>
+    <td>$" . number_format($balance, 2) . "</td>
+    <td>
+    <a class='add-f' href='./deposit.php?wallet=$id'>Add</a>
+    <a class='remove-f' href='./withdraw.php?wallet=$id'>Withdraw</a>
+    <a class='close-f' href='./_includes/remove_h.php?wallet=$id'>Close</a></td>
+    </tr>";
 }
 function sortByLastName($a, $b): int
 {

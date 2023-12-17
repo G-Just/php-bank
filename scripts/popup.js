@@ -34,11 +34,18 @@ if (!stat && error) {
       text = document.createTextNode("Fields cannot be empty");
       break;
     case "balance_not_zero":
-      text = document.createTextNode("Cannot delete accounts with non-zero balance");
+      text = document.createTextNode("Cannot close accounts with non-zero balance");
+      break;
+    case "invalid_amount":
+      text = document.createTextNode("Invalid amount");
       break;
     case "short":
       text = document.createTextNode(
         "First and Last name has to be at least 3 characters long"
+      );
+    case "short":
+      text = document.createTextNode(
+        "First and Last name cannot be longer than 13 characters"
       );
       break;
     case "invalid_personal_code":

@@ -19,6 +19,10 @@ function validate(...$values): bool
         header('Location: ../new.php?error=short');
         exit();
     }
+    if (strlen($values[0]) > 13 || strlen($values[1]) > 13) {
+        header('Location: ../new.php?error=long');
+        exit();
+    }
     if (!validPersonalCode($values[2])) {
         header('Location: ../new.php?error=invalid_personal_code');
         exit();

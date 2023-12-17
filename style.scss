@@ -7,15 +7,19 @@
 }
 
 :root {
-  --primary: rgb(235, 177, 95);
-  --secondary: rgb(238, 238, 238);
-  --background: rgb(34, 40, 49);
-  --border: 5px solid white;
+  --primary: white;
+  --accent: rgb(86, 90, 158);
+  --background: rgb(120, 124, 180);
+  --border: 2px solid black;
+  --shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   background: var(--background);
+  background-image: url(./assets/bg.jpg);
+  background-size: cover;
+  background-blend-mode: color-burn;
 }
 
 #navbar {
@@ -24,7 +28,6 @@ body {
   align-items: center;
   gap: 50px;
   background: var(--primary);
-  border-bottom: var(--border);
   user-select: none;
   p {
     font-size: 2em;
@@ -37,34 +40,63 @@ body {
       }
     }
   }
+  a {
+    text-decoration: none;
+    color: black;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  a:hover {
+    border-bottom: 2px solid var(--accent);
+  }
 }
 
-#wallet-list {
+#table-wrapper {
   margin-top: 100px;
+  margin-bottom: 50px;
   display: flex;
-  flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
 
-.wallet {
-  border: var(--border);
-  margin-bottom: 20px;
-  width: 500px;
-  background-color: var(--primary);
-  padding: 10px;
-  .top {
-    display: flex;
-    justify-content: space-between;
-    padding: 10px;
+#wallet-table {
+  background: var(--primary);
+  box-shadow: var(--shadow);
+  border-collapse: collapse;
+  thead td {
+    color: rgb(162, 162, 162);
   }
-  .mid {
+  td {
+    font-size: 1.2rem;
+    font-weight: bolder;
+    text-transform: uppercase;
+    padding: 20px;
     text-align: center;
-    padding: 10px;
   }
-  .bot {
-    display: flex;
-    justify-content: space-evenly;
-    padding: 10px;
+  a {
+    color: black;
+    text-decoration: none;
+    padding: 6px 15px;
+    margin: 0 2px;
+  }
+  .add-f {
+    outline: 2px solid var(--accent);
+  }
+  .add-f:hover {
+    background: var(--background);
+  }
+  .remove-f {
+    outline: 2px solid orange;
+  }
+  .remove-f:hover {
+    background: lightsalmon;
+  }
+  .close-f {
+    outline: 2px solid red;
+  }
+  .close-f:hover {
+    background: lightcoral;
   }
 }
 
@@ -74,9 +106,10 @@ body {
   justify-content: center;
   margin-top: 100px;
   #form-window {
+    box-shadow: var(--shadow);
+    border-radius: 20px;
     background: var(--primary);
-    border: var(--border);
-    padding: 20px;
+    padding: 50px;
     form {
       display: flex;
       flex-direction: column;
@@ -92,22 +125,28 @@ body {
         font-size: 1.2em;
         padding: 5px;
         font-weight: bold;
+        user-select: none;
       }
       input {
         font-size: 1.5em;
         font-weight: bold;
-        padding: 5px 15px;
+        padding: 10px 15px;
         border-radius: 10px;
         border: 1px solid black;
         margin-bottom: 20px;
       }
       button {
-        font-size: 1.3em;
+        font-size: 1.5rem;
+        font-weight: bold;
         margin-top: 20px;
         padding: 20px;
-        border: 2px solid black;
+        border: 3px solid black;
         cursor: pointer;
         border-radius: 20px;
+      }
+      button:hover {
+        background: var(--accent);
+        color: white;
       }
     }
   }
