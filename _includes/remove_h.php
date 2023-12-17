@@ -1,10 +1,9 @@
 <?php
 define('REQ', TRUE);
-include '../functions/functions.php';
+require '../functions/functions.php';
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['wallet'])) {
     $id = $_GET['wallet'];
-
     $wallet = readData($id)[0];
     print_r($wallet);
     if ($wallet->balance === 0) {

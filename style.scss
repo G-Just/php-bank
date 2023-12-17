@@ -20,6 +20,7 @@ body {
   background-image: url(./assets/bg.jpg);
   background-size: cover;
   background-blend-mode: color-burn;
+  background-attachment: fixed;
 }
 
 #navbar {
@@ -48,6 +49,7 @@ body {
     text-transform: uppercase;
   }
   a:hover {
+    padding-bottom: 5px;
     border-bottom: 2px solid var(--accent);
   }
 }
@@ -66,6 +68,7 @@ body {
   border-collapse: collapse;
   thead td {
     color: rgb(162, 162, 162);
+    user-select: none;
   }
   td {
     font-size: 1.2rem;
@@ -110,6 +113,14 @@ body {
   .long {
     display: none;
   }
+}
+
+#call-to-action {
+  font-size: 2rem;
+  background: white;
+  padding: 30px;
+  box-shadow: var(--shadow);
+  border-radius: 20px;
 }
 
 #form-window-wrapper {

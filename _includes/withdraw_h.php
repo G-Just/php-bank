@@ -1,6 +1,6 @@
 <?php
-require '../functions/functions.php';
 define('REQ', TRUE);
+require '../functions/functions.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $withdraw = $_POST['withdraw'];
