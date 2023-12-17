@@ -6,7 +6,7 @@ PHP Bank
 
 ## Preview
 
-![Page with the account list](image-1.png)
+![Page with the account list](/assets/img.png)
 
 ## Goals
 
