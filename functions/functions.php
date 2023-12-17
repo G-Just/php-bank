@@ -22,7 +22,7 @@ function readData($id = -1): array | object
     } else {
         foreach ($data as $object) {
             if ($object->id === $id) {
-                return [$object];
+                return $object;
             }
         }
     }

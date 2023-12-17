@@ -4,7 +4,7 @@ require '../functions/functions.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['wallet'])) {
     $id = $_GET['wallet'];
-    $wallet = readData($id)[0];
+    $wallet = readData($id);
     print_r($wallet);
     if ($wallet->balance === 0) {
         removeWallet($id);

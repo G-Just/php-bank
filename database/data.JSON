@@ -4,23 +4,23 @@
     "name": "John",
     "lastName": "Doe",
     "number": "LT009999900000000001",
-    "personalCode": "33309240064",
-    "balance": 160
+    "personalCode": "94723842328",
+    "balance": 145
   },
   {
     "id": 1,
-    "name": "John",
-    "lastName": "Zoe",
+    "name": "Duke",
+    "lastName": "Nukem",
     "number": "LT009999900000000002",
-    "personalCode": "33309240064",
+    "personalCode": "38745382828",
     "balance": 250.5
   },
   {
     "id": 2,
-    "name": "John",
-    "lastName": "Smith",
+    "name": "Peter",
+    "lastName": "Griffin",
     "number": "LT009999900000000003",
-    "personalCode": "33309240064",
+    "personalCode": "49238942822",
     "balance": 50
   }
 ]

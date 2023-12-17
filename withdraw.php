@@ -11,7 +11,7 @@ require './functions/functions.php';
             <form action="./_includes/withdraw_h.php" method="POST">
                 <p>Account owner:</p>
                 <?php
-                $data = readData($_GET['wallet'])[0];
+                $data = readData($_GET['wallet']);
                 echo '<h1 style=text-align:center;margin-bottom:3px>' . $data->name . ' ' . $data->lastName . '</h1>';
                 echo '<h5 style=text-align:center;margin-bottom:10px>' . $data->personalCode . '</h5>';
                 echo '<p>Account number:</p>';

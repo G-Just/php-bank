@@ -5,7 +5,7 @@ require '../functions/functions.php';
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $withdraw = $_POST['withdraw'];
     $id = $_POST['id'];
-    $wallet = readData((int)$id)[0]->balance;
+    $wallet = readData((int)$id)->balance;
     if ($withdraw <= 0 || !isset($withdraw) || $withdraw > PHP_INT_MAX) {
         header("Location: ../withdraw.php?wallet=$id&error=invalid_amount");
         exit();
