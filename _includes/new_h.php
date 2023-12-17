@@ -1,4 +1,5 @@
 <?php
+define('REQ', TRUE);
 require '../functions/functions.php';
 function validate(...$values): bool
 {
@@ -39,6 +40,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         header('Location: ../index.php?status=created');
     }
 } else {
-    header('Location: ../index.php?status=unauthorized');
+    header('Location: ../index.php?error=unauthorized');
     die();
 }

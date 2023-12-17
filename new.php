@@ -1,7 +1,8 @@
 <?php
 include './globals/head.html';
 include './globals/navbar.php';
-include './functions/functions.php';
+define('REQ', TRUE);
+require './functions/functions.php';
 ?>
 
 <body>

@@ -1,4 +1,8 @@
 <?php
+if (!defined('REQ')) {
+    header('Location: ../index.php?error=unauthorized');
+    die();
+}
 function test()
 {
     return 'Test';
@@ -67,9 +71,17 @@ function createWallet($id, $name, $lname, $number, $code, $balance): void
     <td>$number</td>
     <td>$" . number_format($balance, 2) . "</td>
     <td>
+    <span class='long'>
     <a class='add-f' href='./deposit.php?wallet=$id'>Add</a>
     <a class='remove-f' href='./withdraw.php?wallet=$id'>Withdraw</a>
-    <a class='close-f' href='./_includes/remove_h.php?wallet=$id'>Close</a></td>
+    <a class='close-f' href='./_includes/remove_h.php?wallet=$id'>Close</a>
+    </span>
+    <span class='short'>
+    <a class='add-f' href='./deposit.php?wallet=$id'>+</a>
+    <a class='remove-f' href='./withdraw.php?wallet=$id'>-</a>
+    <a class='close-f' href='./_includes/remove_h.php?wallet=$id'>X</a>    
+    </span>
+    </td>
     </tr>";
 }
 function sortByLastName($a, $b): int

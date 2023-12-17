@@ -1,4 +1,5 @@
 <?php
+define('REQ', TRUE);
 require '../functions/functions.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -11,6 +12,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     modifyWallet($id, $deposit);
     header("Location: ../index.php?status=deposit_added");
 } else {
-    header('Location: ../index.php?status=unauthorized');
+    header('Location: ../index.php?error=unauthorized');
     die();
 }

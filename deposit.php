@@ -1,7 +1,8 @@
 <?php
 include './globals/head.html';
 include './globals/navbar.php';
-require './functions/functions.php'
+define('REQ', TRUE);
+require './functions/functions.php';
 ?>
 
 <body>
@@ -26,7 +27,7 @@ require './functions/functions.php'
                 const txt = document.getElementById('inp');
                 const balance = document.getElementById('bal');
                 const trbal = +balance.innerText;
-                el.innerHTML = `Expected balance : ${trbal+(+txt.value) >= 0 ? `$ ${(trbal+(+txt.value)).toFixed(2)}` : 'Invalid'}`;
+                el.innerHTML = `Expected balance : ${trbal+(+txt.value) >= 0 && +txt.value > 0 ? `$ ${(trbal+(+txt.value)).toFixed(2)}` : 'Invalid'}`;
                 ">
                 <p id='expected' style='font-size:0.9rem'>‎</p>
                 <button type="submit" name='submit'>Add funds</button>

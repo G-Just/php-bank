@@ -1,5 +1,6 @@
 <?php
 require '../functions/functions.php';
+define('REQ', TRUE);
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $withdraw = $_POST['withdraw'];
@@ -16,6 +17,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     modifyWallet($id, $withdraw * -1);
     header("Location: ../index.php?status=balance_withdrawn");
 } else {
-    header('Location: ../index.php?status=unauthorized');
+    header('Location: ../index.php?error=unauthorized');
     die();
 }

@@ -54,6 +54,9 @@ if (!stat && error) {
     case "duplicate_personal_code":
       text = document.createTextNode("Account with such personal code already exists");
       break;
+    case "unauthorized":
+      text = document.createTextNode("Unauthorized");
+      break;
   }
 }
 if (!stat && !error) {
