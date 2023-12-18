@@ -11,6 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
     modifyWallet($id, $deposit);
     header("Location: ../index.php?status=deposit_added");
+    exit();
 } else {
     header('Location: ../index.php?error=unauthorized');
     die();
