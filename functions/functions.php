@@ -84,17 +84,6 @@ function createWallet($id, $name, $lname, $number, $code, $balance): void
     </td>
     </tr>";
 }
-function sortByLastName($a, $b): int
-{
-    $tempArr = [$a->lastName, $b->lastName];
-    $sortedArr = [$a->lastName, $b->lastName];
-    sort($sortedArr);
-    if ($tempArr[0] === $sortedArr[0]) {
-        return -1;
-    } else {
-        return 1;
-    }
-}
 
 function validPersonalCode($code): bool
 {
