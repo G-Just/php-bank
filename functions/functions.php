@@ -9,7 +9,7 @@ function test()
 }
 function updateData($data): void
 {
-    $data = json_encode($data);
+    $data = json_encode($data, JSON_PRETTY_PRINT);
     file_put_contents(__DIR__ . '/../database/data.JSON', $data);
 }
 function readData($id = -1): array | object
