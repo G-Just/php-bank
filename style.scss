@@ -24,38 +24,43 @@ body {
 }
 
 #navbar {
-  padding: 30px;
+  padding: 30px 50px;
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  gap: 50px;
   background: var(--primary);
   user-select: none;
-  p {
-    font-size: 2em;
-    font-weight: bold;
-    font-style: italic;
-    span {
-      img {
-        height: 30px;
-        transform: skewX(-15deg);
+  div {
+    gap: 50px;
+    align-items: center;
+    display: flex;
+    p {
+      font-size: 2em;
+      font-weight: bold;
+      font-style: italic;
+      span {
+        img {
+          height: 30px;
+          transform: skewX(-15deg);
+        }
       }
     }
-  }
-  a {
-    text-decoration: none;
-    color: black;
-    font-size: 1.5rem;
-    font-weight: bold;
-    text-transform: uppercase;
-  }
-  a:hover {
-    padding-bottom: 5px;
-    border-bottom: 2px solid var(--accent);
+    a {
+      text-decoration: none;
+      color: black;
+      font-size: 1.5rem;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+    a:hover {
+      padding-bottom: 5px;
+      border-bottom: 2px solid var(--accent);
+    }
   }
 }
 
 #table-wrapper {
-  margin-top: 100px;
+  margin-top: 65px;
   margin-bottom: 50px;
   display: flex;
   align-items: center;
@@ -107,6 +112,12 @@ body {
 }
 
 @media (max-width: 1133px) {
+  #navbar {
+    font-size: 0.8rem;
+    div a {
+      font-size: 1rem;
+    }
+  }
   .short {
     display: inline !important;
   }
@@ -127,7 +138,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 100px;
+  margin-top: 65px;
   #form-window {
     box-shadow: var(--shadow);
     border-radius: 20px;
@@ -181,15 +192,15 @@ body {
   }
   15% {
     opacity: 100%;
-    top: 14%;
+    top: 12%;
   }
   90% {
     opacity: 100%;
-    top: 14%;
+    top: 12%;
   }
   to {
     opacity: 0%;
-    top: 14%;
+    top: 12%;
   }
 }
 
@@ -197,7 +208,7 @@ body {
   user-select: none;
   opacity: 0;
   position: absolute;
-  top: 10%;
+  top: 9%;
   left: 50%;
   transform: translate(-50%);
   width: max-content;
@@ -220,4 +231,23 @@ body {
   background-color: rgb(57, 99, 57);
   color: rgb(0, 255, 0);
   border: 2px solid rgb(0, 255, 0);
+}
+
+.credentials {
+  padding-top: 20px !important;
+  padding-bottom: 20px !important;
+  form {
+    input {
+      width: 500px;
+      margin-bottom: 10px !important;
+    }
+    button {
+      margin-bottom: 20px;
+    }
+    label {
+      span {
+        color: rgb(160, 160, 160);
+      }
+    }
+  }
 }
