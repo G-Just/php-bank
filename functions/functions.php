@@ -26,7 +26,7 @@ function readData($id = -1): array | object
             }
         }
     }
-    die("readDataing failed. Maybe the requested ID -> $id doesn't exist?");
+    die("Reading failed. Maybe the requested ID -> ($id) doesn't exist?");
 }
 function addNewWallet($name, $lname, $number, $code): void
 {
