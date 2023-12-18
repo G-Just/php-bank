@@ -79,7 +79,7 @@ function createWallet($id, $name, $lname, $number, $code, $balance): void
     <span class='short'>
     <a class='add-f' href='./deposit.php?wallet=$id'>+</a>
     <a class='remove-f' href='./withdraw.php?wallet=$id'>-</a>
-    <a class='close-f' href='./_includes/remove_h.php?wallet=$id'>X</a>    
+    <a class='close-f' href='./_includes/remove_h.php?wallet=$id'>X</a>
     </span>
     </td>
     </tr>";
