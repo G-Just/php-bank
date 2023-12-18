@@ -1,6 +1,6 @@
 <?php
-include './globals/head.html';
-include './globals/navbar.php';
+require './globals/head.html';
+require './globals/navbar.php';
 define('REQ', TRUE);
 require './functions/functions.php';
 ?>
