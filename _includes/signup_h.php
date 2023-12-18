@@ -38,9 +38,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $password = password_hash($values[2], PASSWORD_DEFAULT);
         return ['id' => $id, 'username' => $values[0], 'email' => $values[1], 'password' => $password];
     }
-    $arr = validate($username, $email, $password, $passwordConfirm);
     $data = json_decode(file_get_contents(__DIR__ . '/../database/credentials.JSON'));
-    array_push($data, $arr);
+    array_push($data, validate($username, $email, $password, $passwordConfirm));
     $data = json_encode($data, JSON_PRETTY_PRINT);
     file_put_contents(__DIR__ . '/../database/credentials.JSON', $data);
     header('Location: ../index.php?status=account_created');
