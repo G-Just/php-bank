@@ -12,14 +12,14 @@ require './functions/functions.php';
                 <p>Account owner:</p>
                 <?php
                 $data = readData($_GET['wallet']);
-                echo '<h1 style=text-align:center;margin-bottom:3px>' . $data->name . ' ' . $data->lastName . '</h1>';
-                echo '<h5 style=text-align:center;margin-bottom:10px>' . $data->personalCode . '</h5>';
-                echo '<p>Account number:</p>';
-                echo '<h1 style=text-align:center;margin-bottom:10px>' . $data->number . '</h1>';
-                echo '<p>Current balance:</p>';
-                echo '<h1 style=text-align:center;margin-bottom:20px>' . '$ ' . number_format($data->balance, 2) . '</h1>';
-                echo '<h1 id=' . 'bal' . ' style=display:none>' . $data->balance . '</h1>';
-                echo "<input type='hidden' name='id' value=" . $data->id . '>'
+                echo '<h1 style=text-align:center;margin-bottom:3px>' . $data->name . ' ' . $data->lastName . '</h1>'
+                    . '<h5 style=text-align:center;margin-bottom:10px>' . $data->personalCode . '</h5>'
+                    . '<p>Account number:</p>'
+                    . '<h1 style=text-align:center;margin-bottom:10px>' . $data->number . '</h1>'
+                    . '<p>Current balance:</p>'
+                    . '<h1 style=text-align:center;margin-bottom:20px>' . '$ ' . number_format($data->balance, 2) . '</h1>'
+                    . '<h1 id=' . 'bal' . ' style=display:none>' . $data->balance . '</h1>'
+                    . "<input type='hidden' name='id' value=" . $data->id . '>'
                 ?>
                 <label style='text-align:center;' for="deposit">Deposit amount</label>
                 <input id='inp' style='margin-bottom:0' type="number" step="0.01" name="deposit" id="deposit" oninput="
