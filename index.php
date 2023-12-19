@@ -15,7 +15,7 @@ require './functions/functions.php';
                     <thead>
                         <tr>
                             <td>Owner</td>
-                            <td>Personal number</td>
+                            <td>Personal code</td>
                             <td>Account number</td>
                             <td>Balance</td>
                             <td>Actions</td>

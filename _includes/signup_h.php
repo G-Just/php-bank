@@ -42,7 +42,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     array_push($data, validate($username, $email, $password, $passwordConfirm));
     $data = json_encode($data, JSON_PRETTY_PRINT);
     file_put_contents(__DIR__ . '/../database/credentials.JSON', $data);
-    header('Location: ../index.php?status=account_created');
+    header('Location: ../signin.php?status=account_created');
     exit();
 } else {
     header('Location: ../index.php?error=unauthorized');

@@ -1,11 +1,22 @@
+<?php
+session_start();
+?>
 <div id='navbar'>
     <div>
         <p>United <span><img src="./assets/phplogo.png" alt="php logo"></span> bank</p>
         <a href='./'>Accounts</a>
         <a href='./new.php'>Create a new account</a>
     </div>
+
     <div>
-        <a href="./signup.php">Sign up</a>
-        <a href="./signin.php">Sign in</a>
+        <?php
+        if (isset($_SESSION['id'])) {
+            echo "<h2>Signed in as : " . $_SESSION['username'] . "</h2>
+            <a href='./_includes/signout_h.php'>Sign out</a>";
+        } else {
+            echo "<a href='./signup.php'>Sign up</a>
+            <a href='./signin.php'>Sign in</a>";
+        }
+        ?>
     </div>
 </div>

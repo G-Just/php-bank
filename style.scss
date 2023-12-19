@@ -101,7 +101,7 @@ body {
     outline: 2px solid orange;
   }
   .remove-f:hover {
-    background: lightsalmon;
+    background: rgb(255, 194, 169);
   }
   .close-f {
     outline: 2px solid red;
@@ -152,7 +152,6 @@ body {
         user-select: none;
       }
       h1 {
-        user-select: none;
         margin-bottom: 1rem;
       }
       label {

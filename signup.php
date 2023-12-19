@@ -8,7 +8,7 @@ require './globals/navbar.php';
         <div id="form-window" class="credentials">
             <form action="./_includes/signup_h.php" method="POST">
                 <h1 style='text-align:center;font-size:3rem;'>Sign Up</h1>
-                <label for="username">Username</label>
+                <label for="username">Username <span>*used for display only</span></label>
                 <input type="text" name="username" id="username">
                 <label for="email">Email <span>*used to sign in</span></label>
                 <input type="text" name="email" id="email">
