@@ -5,7 +5,7 @@
         "lastName": "Doe",
         "number": "LT009999900000000001",
         "personalCode": "94723842328",
-        "balance": 148.19999999995343
+        "balance": 249.99999999995345
     },
     {
         "id": 1,
@@ -18,9 +18,9 @@
     {
         "id": 2,
         "name": "Peter",
-        "lastName": "Griffin",
+        "lastName": "Girffin",
         "number": "LT009999900000000003",
-        "personalCode": "49238942822",
-        "balance": 49.99
+        "personalCode": "33309240064",
+        "balance": 40
     }
 ]

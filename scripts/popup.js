@@ -49,6 +49,7 @@ if (!stat && error) {
       text = document.createTextNode(
         "First and Last name has to be at least 3 characters long"
       );
+      break;
     case "long":
       text = document.createTextNode(
         "First and Last name cannot be longer than 13 characters"
