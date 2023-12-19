@@ -24,6 +24,12 @@ if (stat && !error) {
     case "created":
       text = document.createTextNode("New account created");
       break;
+    case "signed_in":
+      text = document.createTextNode("Signed In");
+      break;
+    case "wrong_password":
+      text = document.createTextNode("Wrong password");
+      break;
   }
 }
 if (!stat && error) {
@@ -43,7 +49,7 @@ if (!stat && error) {
       text = document.createTextNode(
         "First and Last name has to be at least 3 characters long"
       );
-    case "short":
+    case "long":
       text = document.createTextNode(
         "First and Last name cannot be longer than 13 characters"
       );
@@ -53,6 +59,21 @@ if (!stat && error) {
       break;
     case "duplicate_personal_code":
       text = document.createTextNode("Account with such personal code already exists");
+      break;
+    case "duplicate_email":
+      text = document.createTextNode("Account with such email already exists");
+      break;
+    case "invalid_email":
+      text = document.createTextNode("Invalid email address");
+      break;
+    case "passwords_do_not_match":
+      text = document.createTextNode("Passwords do not match");
+      break;
+    case "email_not_found":
+      text = document.createTextNode("Account with such email address does not exist");
+      break;
+    case "wrong_password":
+      text = document.createTextNode("Wrong password");
       break;
     case "unauthorized":
       text = document.createTextNode("Unauthorized");
