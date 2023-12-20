@@ -18,5 +18,13 @@ session_start();
             <a href='./signin.php'>Sign in</a>";
         }
         ?>
+        <form action="./_includes/theme_h.php" method="POST">
+            <input type='image' id='theme' src=<?php
+                                                if (isset($_COOKIE['theme']) && $_COOKIE['theme'] === 'dark') {
+                                                    echo './assets/moon.svg';
+                                                } else {
+                                                    echo './assets/sun.svg';
+                                                } ?> alt="theme change" />
+        </form>
     </div>
 </div>

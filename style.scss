@@ -10,14 +10,27 @@
   --primary: white;
   --accent: rgb(86, 90, 158);
   --background: rgb(120, 124, 180);
-  --border: 2px solid black;
+  --outline: 0px solid black;
   --shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  --text: black;
+  --text-l: rgb(162, 162, 162);
+  --img: url(./assets/bg_light.jpg);
+}
+.dark {
+  --primary: rgb(40, 44, 54);
+  --accent: rgb(110, 113, 176);
+  --background: rgba(0, 0, 0, 0.7);
+  --outline: 2px solid white;
+  --shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  --text: white;
+  --text-l: rgb(85, 85, 85);
+  --img: url(./assets/bg_dark.jpg);
 }
 
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   background: var(--background);
-  background-image: url(./assets/bg.jpg);
+  background-image: var(--img);
   background-size: cover;
   background-blend-mode: color-burn;
   background-attachment: fixed;
@@ -30,11 +43,14 @@ body {
   align-items: center;
   background: var(--primary);
   user-select: none;
+  outline: var(--outline);
+  color: var(--text);
   div {
     gap: 50px;
     align-items: center;
     display: flex;
     p {
+      color: var(--text);
       font-size: 2em;
       font-weight: bold;
       font-style: italic;
@@ -47,7 +63,7 @@ body {
     }
     a {
       text-decoration: none;
-      color: black;
+      color: var(--text);
       font-size: 1.5rem;
       font-weight: bold;
       text-transform: uppercase;
@@ -55,6 +71,11 @@ body {
     a:hover {
       padding-bottom: 5px;
       border-bottom: 2px solid var(--accent);
+    }
+    #theme {
+      border: none;
+      background: transparent;
+      cursor: pointer;
     }
   }
 }
@@ -68,14 +89,16 @@ body {
 }
 
 #wallet-table {
+  border: var(--outline);
   background: var(--primary);
   box-shadow: var(--shadow);
   border-collapse: collapse;
   thead td {
-    color: rgb(162, 162, 162);
+    color: var(--text-l);
     user-select: none;
   }
   td {
+    color: var(--text);
     font-size: 1.2rem;
     font-weight: bolder;
     text-transform: uppercase;
@@ -83,7 +106,7 @@ body {
     text-align: center;
   }
   a {
-    color: black;
+    color: var(--text);
     text-decoration: none;
     padding: 6px 15px;
     margin: 0 2px;
@@ -92,10 +115,10 @@ body {
     display: none;
   }
   .add-f {
-    outline: 2px solid var(--accent);
+    outline: 2px solid rgb(86, 90, 158);
   }
   .add-f:hover {
-    background: var(--background);
+    background: rgb(120, 124, 180);
   }
   .remove-f {
     outline: 2px solid orange;
@@ -128,7 +151,7 @@ body {
 
 #call-to-action {
   font-size: 2rem;
-  background: white;
+  background: var(--primary);
   padding: 30px;
   box-shadow: var(--shadow);
   border-radius: 20px;
@@ -140,6 +163,7 @@ body {
   justify-content: center;
   margin-top: 65px;
   #form-window {
+    outline: var(--outline);
     box-shadow: var(--shadow);
     border-radius: 20px;
     background: var(--primary);
@@ -236,6 +260,7 @@ body {
   padding-top: 20px !important;
   padding-bottom: 20px !important;
   form {
+    color: var(--text);
     input {
       width: 500px;
       margin-bottom: 10px !important;
@@ -245,7 +270,7 @@ body {
     }
     label {
       span {
-        color: rgb(160, 160, 160);
+        color: var(--text-l);
       }
     }
   }
