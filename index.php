@@ -9,7 +9,7 @@ require './functions/functions.php';
     <div id='table-wrapper'>
         <?php
         $data = readData();
-        usort($data, fn ($a, $b) => $a->lastName <=> $b->lastName); // sorts by last name
+        usort($data, 'sortByLastName'); // sorts by last name
         if (count($data) > 0) {
             echo " <table id='wallet-table'>
                     <thead>
