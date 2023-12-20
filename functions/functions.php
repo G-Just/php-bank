@@ -45,8 +45,8 @@ function modifyWallet($id, $amount)
     $currentData = readData();
     foreach ($currentData as $wallet) {
         if ($wallet->id === (int)$id) {
-            $wallet->balance += (float)$amount;
-            print_r($wallet);
+            $wallet->balance = round($wallet->balance, 2);
+            $wallet->balance += round($amount, 2);
         }
     }
     updateData($currentData);
