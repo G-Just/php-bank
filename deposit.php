@@ -3,6 +3,10 @@ require './globals/head.html';
 require './globals/navbar.php';
 define('REQ', TRUE);
 require './functions/functions.php';
+if (!isset($_SESSION['id'])) {
+    header('Location: ./signin.php?error=not_signed_in');
+    die();
+}
 ?>
 
 <body>

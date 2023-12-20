@@ -76,6 +76,9 @@ if (!stat && error) {
     case "wrong_password":
       text = document.createTextNode("Wrong password");
       break;
+    case "not_signed_in":
+      text = document.createTextNode("Sign in to use this feature");
+      break;
     case "unauthorized":
       text = document.createTextNode("Unauthorized");
       break;

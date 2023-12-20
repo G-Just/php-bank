@@ -1,6 +1,11 @@
 <?php
+session_start();
 define('REQ', TRUE);
 require '../functions/functions.php';
+if (!isset($_SESSION['id'])) {
+    header('Location: ../signin.php?error=not_signed_in');
+    die();
+}
 
 if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['wallet'])) {
     $id = $_GET['wallet'];
