@@ -7,7 +7,7 @@ if (!isset($_SESSION['id'])) {
     die();
 }
 
-if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['wallet'])) {
+if (isset($_GET['wallet'])) {
     $id = $_GET['wallet'];
     $wallet = readData($id);
     print_r($wallet);
