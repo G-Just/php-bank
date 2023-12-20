@@ -13,7 +13,7 @@
         "lastName": "Nukem",
         "number": "LT009999900000000002",
         "personalCode": "38745382828",
-        "balance": 220
+        "balance": 219.95
     },
     {
         "id": 2,
@@ -21,6 +21,6 @@
         "lastName": "Girffin",
         "number": "LT009999900000000003",
         "personalCode": "33309240064",
-        "balance": 40
+        "balance": 40.5
     }
 ]
