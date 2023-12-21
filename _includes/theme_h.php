@@ -9,9 +9,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             setcookie("theme", "", time() - 3600);
             setcookie('theme', 'dark', 0, "/");
         }
-        header('Location: ../index.php');
     } else {
-        header('Location: ../index.php?error=unauthorized');
-        die();
+        setcookie('theme', 'dark', 0, "/");
     }
+    header('Location: ../index.php');
+} else {
+    header('Location: ../index.php?error=unauthorized');
+    die();
 }
