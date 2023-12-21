@@ -6,7 +6,8 @@ PHP Bank
 
 ## Preview
 
-![Page preview](/assets/preview.png)
+![Page preview dark](/assets/preview_d.png)
+![Page preview light](/assets/preview_l.png)
 
 ## Goals
 
