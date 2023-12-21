@@ -1,0 +1,70 @@
+<?php
+echo "Seeding...\n";
+$data = [
+    [
+        "id" => 0,
+        "name" => "John",
+        "lastName" => "Doe",
+        "number" => "LT009999900000000001",
+        "personalCode" => "94723842328",
+        "balance" => 250
+    ],
+    [
+        "id" => 1,
+        "name" => "Duke",
+        "lastName" => "Nukem",
+        "number" => "LT009999900000000002",
+        "personalCode" => "38745382828",
+        "balance" => 419.95
+    ],
+    [
+        "id" => 2,
+        "name" => "Peter",
+        "lastName" => "Girffin",
+        "number" => "LT009999900000000003",
+        "personalCode" => "33309240064",
+        "balance" => 40.5
+    ],
+    [
+        "id" => 3,
+        "name" => "Teddy",
+        "lastName" => "McDonald",
+        "number" => "LT009999900000000004",
+        "personalCode" => "38511522826",
+        "balance" => 100000000
+    ],
+    [
+        "id" => 4,
+        "name" => "Franklin",
+        "lastName" => "Saint",
+        "number" => "LT009999900000000005",
+        "personalCode" => "39603229210",
+        "balance" => 32152200.21
+    ],
+    [
+        "id" => 5,
+        "name" => "Dexter",
+        "lastName" => "Morgan",
+        "number" => "LT009999900000000006",
+        "personalCode" => "18205101224",
+        "balance" => 6500.58
+    ],
+    [
+        "id" => 6,
+        "name" => "Debra",
+        "lastName" => "Morgan",
+        "number" => "LT009999900000000007",
+        "personalCode" => "28601028836",
+        "balance" => 1233.0
+    ],
+    [
+        "id" => 7,
+        "name" => "Stewie",
+        "lastName" => "Griffin",
+        "number" => "LT009999900000000008",
+        "personalCode" => "50105120932",
+        "balance" => 97041.33
+    ]
+];
+file_put_contents(__DIR__ . '/../database/data.JSON', $data = json_encode($data, JSON_PRETTY_PRINT));
+echo "Seeding finished\n";
