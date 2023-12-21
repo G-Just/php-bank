@@ -27,6 +27,9 @@ if (stat && !error) {
     case "signed_in":
       text = document.createTextNode("Signed In");
       break;
+    case "signed_out":
+      text = document.createTextNode("Signed out");
+      break;
     case "wrong_password":
       text = document.createTextNode("Wrong password");
       break;

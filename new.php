@@ -1,6 +1,6 @@
 <?php
-require './globals/head.php';
-require './globals/navbar.php';
+require './templates/head.php';
+require './templates/navbar.php';
 define('REQ', TRUE);
 require './functions/functions.php';
 if (!isset($_SESSION['id'])) {
@@ -13,7 +13,7 @@ if (!isset($_SESSION['id'])) {
 <div id='form-window-wrapper'>
     <div id="form-window">
         <form action="./_includes/new_h.php" method="POST">
-            <p>Your new bank account number</p>
+            <p>New bank account number</p>
             <?php
             $data = readData();
             if (count($data) > 0) {

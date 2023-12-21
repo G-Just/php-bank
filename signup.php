@@ -1,6 +1,6 @@
 <?php
-require './globals/head.php';
-require './globals/navbar.php';
+require './templates/head.php';
+require './templates/navbar.php';
 ?>
 
 
