@@ -2,7 +2,7 @@
 define('REQ', TRUE);
 require '../functions/functions.php';
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $deposit = $_POST['deposit'];
     $id = $_POST['id'];
     if ($deposit <= 0 || !isset($deposit) || $deposit > PHP_INT_MAX) {
@@ -10,7 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit();
     }
     modifyWallet($id, $deposit);
-    header("Location: ../index.php?status=deposit_added");
+    header('Location: ../index.php?status=deposit_added');
     exit();
 } else {
     header('Location: ../index.php?error=unauthorized');

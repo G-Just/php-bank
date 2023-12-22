@@ -2,7 +2,7 @@
 define('REQ', TRUE);
 require '../functions/functions.php';
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $email = htmlspecialchars($_POST['email']);
     $password = htmlspecialchars($_POST['password']);
     $users = json_decode(file_get_contents(__DIR__ . '/../database/credentials.JSON'));

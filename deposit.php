@@ -10,7 +10,7 @@ if (!isset($_SESSION['id'])) {
 ?>
 
 <div id='form-window-wrapper'>
-    <div id="form-window">
+    <div id='form-window'>
         <form action="./_includes/deposit_h.php" method="POST">
             <p>Account owner:</p>
             <?php

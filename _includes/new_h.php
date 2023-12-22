@@ -30,7 +30,7 @@ function validate(...$values): bool
     }
     return true;
 }
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $name = htmlspecialchars($_POST['fname']);
     $lname = htmlspecialchars($_POST['lname']);
     $code = htmlspecialchars($_POST['code']);

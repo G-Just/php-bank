@@ -10,7 +10,7 @@ require './functions/functions.php';
     $data = readData();
     usort($data, 'sortByLastName');
     if (count($data) > 0) {
-        echo " <table id='wallet-table'>
+        echo "<table id='wallet-table'>
                     <thead>
                         <tr>
                             <td>Owner</td>

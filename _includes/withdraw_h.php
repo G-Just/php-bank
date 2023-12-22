@@ -2,7 +2,7 @@
 define('REQ', TRUE);
 require '../functions/functions.php';
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $withdraw = $_POST['withdraw'];
     $id = $_POST['id'];
     $wallet = readData((int)$id)->balance;
@@ -15,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit();
     }
     modifyWallet($id, $withdraw * -1);
-    header("Location: ../index.php?status=balance_withdrawn");
+    header('Location: ../index.php?status=balance_withdrawn');
 } else {
     header('Location: ../index.php?error=unauthorized');
     die();
