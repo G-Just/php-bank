@@ -24,6 +24,9 @@ if (stat && !error) {
     case "created":
       text = document.createTextNode("New account created");
       break;
+    case "user_created":
+      text = document.createTextNode("New user created");
+      break;
     case "signed_in":
       text = document.createTextNode("Signed In");
       break;

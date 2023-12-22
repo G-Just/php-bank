@@ -115,3 +115,63 @@ function validPersonalCode($code): bool
     }
     return false;
 }
+function validateSignUp(...$values): array
+{
+    $users = json_decode(file_get_contents(__DIR__ . '/../database/credentials.JSON'));
+    foreach ($values as $entry) {
+        if (empty($entry)) {
+            header('Location: ../signup.php?error=empty_fields');
+            exit();
+        }
+    }
+    foreach ($users as $entry) {
+        if ($entry->email == $values[1]) {
+            header('Location: ../signup.php?error=duplicate_email');
+            exit();
+        }
+    }
+    if (!filter_var($values[1], FILTER_VALIDATE_EMAIL)) {
+        header('Location: ../signup.php?error=invalid_email');
+        exit();
+    }
+    if ($values[2] !== $values[3]) {
+        header('Location: ../signup.php?error=passwords_do_not_match');
+        exit();
+    }
+    if (isset((end($users)->id))) {
+        $id = (end($users)->id) + 1;
+    } else {
+        $id = 0;
+    }
+    $password = password_hash($values[2], PASSWORD_DEFAULT);
+    return ['id' => $id, 'username' => $values[0], 'email' => $values[1], 'password' => $password];
+}
+function validateAccount(...$values): bool
+{
+    $data = readData();
+    foreach ($values as $entry) {
+        if (empty($entry)) {
+            header('Location: ../new.php?error=empty_fields');
+            exit();
+        }
+    }
+    foreach ($data as $entry) {
+        if ($entry->personalCode === end($values)) {
+            header('Location: ../new.php?error=duplicate_personal_code');
+            exit();
+        }
+    }
+    if (strlen($values[0]) < 3 || strlen($values[1]) < 3) {
+        header('Location: ../new.php?error=short');
+        exit();
+    }
+    if (strlen($values[0]) > 13 || strlen($values[1]) > 13) {
+        header('Location: ../new.php?error=long');
+        exit();
+    }
+    if (!validPersonalCode($values[2])) {
+        header('Location: ../new.php?error=invalid_personal_code');
+        exit();
+    }
+    return true;
+}
