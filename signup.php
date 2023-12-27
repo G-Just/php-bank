@@ -1,8 +1,11 @@
 <?php
 require './templates/head.php';
 require './templates/navbar.php';
+if (isset($_SESSION['id'])) {
+    header('Location: ./index.php?error=already_signed_in');
+    die();
+}
 ?>
-
 
 <div id='form-window-wrapper'>
     <div id="form-window" class="credentials">

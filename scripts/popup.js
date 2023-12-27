@@ -85,6 +85,9 @@ if (!stat && error) {
     case "not_signed_in":
       text = document.createTextNode("Sign in to use this feature");
       break;
+    case "already_signed_in":
+      text = document.createTextNode("Sign out to access this page");
+      break;
     case "unauthorized":
       text = document.createTextNode("Unauthorized");
       break;
