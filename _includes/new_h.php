@@ -10,6 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         addNewWallet($name, $lname, $number, $code);
         header('Location: ../index.php?status=created');
     }
+    exit();
 } else {
     header('Location: ../index.php?error=unauthorized');
     die();

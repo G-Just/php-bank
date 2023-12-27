@@ -3,15 +3,13 @@ if (!defined('REQ')) {
     header('Location: ../index.php?error=unauthorized');
     die();
 }
-function test()
-{
-    return 'Test';
-}
+
 function updateData($data): void
 {
     $data = json_encode($data, JSON_PRETTY_PRINT);
     file_put_contents(__DIR__ . '/../database/data.JSON', $data);
 }
+
 function readData($id = -1): array | object
 {
     $id = (int)$id;
@@ -28,6 +26,7 @@ function readData($id = -1): array | object
     }
     die("Reading failed. Maybe the requested ID -> ($id) doesn't exist?");
 }
+
 function addNewWallet($name, $lname, $number, $code): void
 {
     $currentData = readData();
@@ -40,6 +39,7 @@ function addNewWallet($name, $lname, $number, $code): void
     array_push($currentData, $newWallet);
     updateData($currentData);
 }
+
 function modifyWallet($id, $amount)
 {
     $currentData = readData();
@@ -51,6 +51,7 @@ function modifyWallet($id, $amount)
     }
     updateData($currentData);
 }
+
 function removeWallet($id)
 {
     $currentData = readData();
@@ -62,6 +63,7 @@ function removeWallet($id)
     $currentData = array_values($currentData);
     updateData($currentData);
 }
+
 function createWallet($id, $name, $lname, $number, $code, $balance): void
 {
     echo "
@@ -115,6 +117,7 @@ function validPersonalCode($code): bool
     }
     return false;
 }
+
 function validateSignUp(...$values): array
 {
     $users = json_decode(file_get_contents(__DIR__ . '/../database/credentials.JSON'));
@@ -146,6 +149,7 @@ function validateSignUp(...$values): array
     $password = password_hash($values[2], PASSWORD_DEFAULT);
     return ['id' => $id, 'username' => $values[0], 'email' => $values[1], 'password' => $password];
 }
+
 function validateAccount(...$values): bool
 {
     $data = readData();

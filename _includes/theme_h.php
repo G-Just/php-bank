@@ -17,8 +17,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $location = (preg_split('/[?=]/', $location[0]));
     if ($location[1] == 'wallet') {
         header('Location: ../' . $location[0] . '?' . $location[1] . '=' . $location[2]);
+        exit();
     } else {
         header('Location: ../' . $location[0] ?? '');
+        exit();
     }
 } else {
     header('Location: ../index.php?error=unauthorized');

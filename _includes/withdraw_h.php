@@ -16,6 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
     modifyWallet($id, $withdraw * -1);
     header('Location: ../index.php?status=balance_withdrawn');
+    exit();
 } else {
     header('Location: ../index.php?error=unauthorized');
     die();
