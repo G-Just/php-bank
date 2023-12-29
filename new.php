@@ -9,7 +9,6 @@ if (!isset($_SESSION['id'])) {
 }
 ?>
 
-
 <div id='form-window-wrapper'>
     <div id="form-window">
         <form action="./_includes/new_h.php" method="POST">
