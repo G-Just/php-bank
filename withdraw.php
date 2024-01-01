@@ -9,7 +9,6 @@ if (!isset($_SESSION['id'])) {
 }
 ?>
 
-
 <div id='form-window-wrapper'>
     <div id="form-window">
         <form action="./_includes/withdraw_h.php" method="POST">
