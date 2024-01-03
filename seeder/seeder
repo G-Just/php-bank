@@ -22,7 +22,7 @@ $data = [
         "name" => "Peter",
         "lastName" => "Girffin",
         "number" => "LT009999900000000003",
-        "personalCode" => "33309240064",
+        "personalCode" => "33309240068",
         "balance" => 40.5
     ],
     [

@@ -76,12 +76,12 @@ function createWallet($id, $name, $lname, $number, $code, $balance): void
     <span class='long'>
     <a class='add-f' href='./deposit.php?wallet=$id'>Add</a>
     <a class='remove-f' href='./withdraw.php?wallet=$id'>Withdraw</a>
-    <a class='close-f' href='./_includes/remove_h.php?wallet=$id'>Close</a>
+    <a class='close-f' href='./_includes/remove_h.php?wallet=$id' onclick=\"return confirm(`Are you sure?\nAll account data will be lost.`)\">Close</a>
     </span>
     <span class='short'>
     <a class='add-f' href='./deposit.php?wallet=$id'>+</a>
     <a class='remove-f' href='./withdraw.php?wallet=$id'>-</a>
-    <a class='close-f' href='./_includes/remove_h.php?wallet=$id'>X</a>
+    <a class='close-f' href='./_includes/remove_h.php?wallet=$id' onclick=\"return confirm(`Are you sure?\nAll account data will be lost.`)\">X</a>
     </span>
     </td>
     </tr>";

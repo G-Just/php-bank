@@ -16,7 +16,7 @@ if (!isset($_SESSION['id'])) {
             <?php
             $data = readData();
             if (count($data) > 0) {
-                $number = str_pad((string)(int)substr(end($data)->number, 9, 11) + 1, 11, '0', STR_PAD_LEFT);
+                $number = str_pad(substr(end($data)->number, 9, 11) + 1, 11, '0', STR_PAD_LEFT);
                 $number = "LT0099999$number";
             } else {
                 $number = "LT009999900000000001";
