@@ -179,3 +179,17 @@ function validateAccount(...$values): bool
     }
     return true;
 }
+function generateBankNumber(): string
+{
+    $data = readData();
+    $number = '';
+    foreach (range(1, 11) as $digit) {
+        $number = $number . (string)rand(0, 9);
+    }
+    foreach ($data as $entry) {
+        if ($number === substr($entry->number, 9)) {
+            return generateBankNumber();
+        }
+    }
+    return $number;
+}

@@ -15,12 +15,7 @@ if (!isset($_SESSION['id'])) {
             <p>New bank account number</p>
             <?php
             $data = readData();
-            if (count($data) > 0) {
-                $number = str_pad(substr(end($data)->number, 9, 11) + 1, 11, '0', STR_PAD_LEFT);
-                $number = "LT0099999$number";
-            } else {
-                $number = "LT009999900000000001";
-            }
+            $number = "LT0099999" . generateBankNumber();
             echo "<h1>$number</h1>";
             echo "<input type='hidden' name='number' value='$number'>"
             ?>
