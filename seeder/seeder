@@ -5,15 +5,15 @@ $data = [
         "id" => 0,
         "name" => "John",
         "lastName" => "Doe",
-        "number" => "LT009999900000000001",
+        "number" => "LT009999995641657718",
         "personalCode" => "94723842328",
         "balance" => 250
     ],
     [
         "id" => 1,
-        "name" => "Duke",
-        "lastName" => "Nukem",
-        "number" => "LT009999900000000002",
+        "name" => "Martin",
+        "lastName" => "Byrde",
+        "number" => "LT009999989456475152",
         "personalCode" => "38745382828",
         "balance" => 419.95
     ],
@@ -21,7 +21,7 @@ $data = [
         "id" => 2,
         "name" => "Peter",
         "lastName" => "Girffin",
-        "number" => "LT009999900000000003",
+        "number" => "LT009999956344606715",
         "personalCode" => "33309240068",
         "balance" => 40.5
     ],
@@ -29,7 +29,7 @@ $data = [
         "id" => 3,
         "name" => "Teddy",
         "lastName" => "McDonald",
-        "number" => "LT009999900000000004",
+        "number" => "LT009999941888880504",
         "personalCode" => "38511522826",
         "balance" => 100000000
     ],
@@ -37,7 +37,7 @@ $data = [
         "id" => 4,
         "name" => "Franklin",
         "lastName" => "Saint",
-        "number" => "LT009999900000000005",
+        "number" => "LT009999912238558719",
         "personalCode" => "39603229210",
         "balance" => 32152200.21
     ],
@@ -45,7 +45,7 @@ $data = [
         "id" => 5,
         "name" => "Dexter",
         "lastName" => "Morgan",
-        "number" => "LT009999900000000006",
+        "number" => "LT009999927248320436",
         "personalCode" => "18205101224",
         "balance" => 6500.58
     ],
@@ -53,15 +53,15 @@ $data = [
         "id" => 6,
         "name" => "Debra",
         "lastName" => "Morgan",
-        "number" => "LT009999900000000007",
+        "number" => "LT009999904198831675",
         "personalCode" => "28601028836",
-        "balance" => 1233.0
+        "balance" => 1233
     ],
     [
         "id" => 7,
         "name" => "Stewie",
         "lastName" => "Griffin",
-        "number" => "LT009999900000000008",
+        "number" => "LT009999908446872709",
         "personalCode" => "50105120932",
         "balance" => 97041.33
     ]
