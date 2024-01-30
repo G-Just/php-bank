@@ -40,4 +40,3 @@ PHP Bank
 ### Additional features
 
 - Ability to change dark/light themes by assigning a cookie with the preference
-- Responsive design up to 1051px.
